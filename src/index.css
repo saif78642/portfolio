@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0A0B0F;
+  --color-foreground: #ffffff;
+  --color-muted: #94a3b8;
+  --color-muted-light: #cbd5e1;
+  --color-card: rgba(255, 255, 255, 0.02);
+  --color-card-hover: rgba(255, 255, 255, 0.04);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-accent-subtle: rgba(255, 255, 255, 0.03);
+
+  --animate-hero-in: hero-in 0.8s ease-out forwards;
+  --animate-hero-avatar-in: hero-avatar-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-float: float 20s ease-in-out infinite;
+  
+  @keyframes hero-in {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes hero-avatar-in {
+    from { opacity: 0; transform: scale(0.95) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(30px, -20px) scale(1.05); }
+    50% { transform: translate(-15px, 25px) scale(0.98); }
+    75% { transform: translate(20px, 15px) scale(1.02); }
+  }
+}
+
+/* ── Theme Variables ── */
+:root,
+[data-theme="dark"] {
+  --bg-base: #0A0B0F;
+  --bg-elevated: #10131A;
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --bg-card-hover: rgba(255, 255, 255, 0.04);
+  --bg-input: rgba(0, 0, 0, 0.5);
+  --bg-tag: rgba(255, 255, 255, 0.05);
+  --bg-nav: rgba(10, 11, 15, 0.95);
+  --bg-nav-transparent: rgba(10, 11, 15, 0.7);
+  --bg-overlay: rgba(10, 11, 15, 0.98);
+
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #000000;
+
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.2);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  --accent-sky: #38BDF8;
+  --accent-violet: #8B5CF6;
+  --accent-emerald: #22C55E;
+  --accent-amber: #F59E0B;
+
+  --btn-primary-bg: #ffffff;
+  --btn-primary-text: #000000;
+  --btn-primary-hover: rgba(255, 255, 255, 0.9);
+
+  --glow-purple: rgba(168, 85, 247, 0.03);
+  --glow-sky: rgba(56, 189, 248, 0.03);
+  --glow-emerald: rgba(34, 197, 94, 0.02);
+
+  --selection-bg: rgba(56, 189, 248, 0.3);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.1);
+  --scrollbar-hover: rgba(56, 189, 248, 0.3);
+
+  --grid-line: rgba(255, 255, 255, 0.02);
+  --hero-glow: rgba(255, 255, 255, 0.05);
+  --icon-bg: rgba(255, 255, 255, 0.05);
+  --icon-bg-hover: rgba(255, 255, 255, 0.08);
+  --metric-bg: rgba(10, 11, 15, 0.5);
+}
+
+[data-theme="light"] {
+  --bg-base: #F8FAFC;
+  --bg-elevated: #FFFFFF;
+  --bg-card: rgba(0, 0, 0, 0.02);
+  --bg-card-hover: rgba(0, 0, 0, 0.04);
+  --bg-input: rgba(255, 255, 255, 0.9);
+  --bg-tag: rgba(0, 0, 0, 0.05);
+  --bg-nav: rgba(248, 250, 252, 0.95);
+  --bg-nav-transparent: rgba(248, 250, 252, 0.7);
+  --bg-overlay: rgba(248, 250, 252, 0.98);
+
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-hover: rgba(0, 0, 0, 0.2);
+  --border-subtle: rgba(0, 0, 0, 0.05);
+
+  --accent-sky: #0284C7;
+  --accent-violet: #7C3AED;
+  --accent-emerald: #16A34A;
+  --accent-amber: #D97706;
+
+  --btn-primary-bg: #0F172A;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: rgba(15, 23, 42, 0.9);
+
+  --glow-purple: rgba(168, 85, 247, 0.06);
+  --glow-sky: rgba(56, 189, 248, 0.06);
+  --glow-emerald: rgba(34, 197, 94, 0.04);
+
+  --selection-bg: rgba(2, 132, 199, 0.2);
+  --scrollbar-thumb: rgba(0, 0, 0, 0.15);
+  --scrollbar-hover: rgba(2, 132, 199, 0.3);
+
+  --grid-line: rgba(0, 0, 0, 0.03);
+  --hero-glow: rgba(0, 0, 0, 0.03);
+  --icon-bg: rgba(0, 0, 0, 0.05);
+  --icon-bg-hover: rgba(0, 0, 0, 0.08);
+  --metric-bg: rgba(248, 250, 252, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body, #root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover);
+}
+
+/* Global Selection */
+::selection {
+  background: var(--selection-bg);
+  color: var(--text-primary);
+}
