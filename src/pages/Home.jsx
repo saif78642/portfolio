@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import {
   ArrowRight, Terminal, BarChart, Database, Network, Mail,
-  Github, ExternalLink, Code2, Brain, TerminalSquare,
+  Github, ExternalLink, Code2, Brain, TerminalSquare, Bot,
   Briefcase, GraduationCap, Award, CheckCircle2, Send, MapPin, Loader2,
   Linkedin, Download, FileText, CircleDot
 } from 'lucide-react';
@@ -10,6 +10,16 @@ import {
 /* ─── Data ──────────────────────────────────────────────────── */
 
 const ALL_PROJECTS = [
+  {
+    id: 'proj0',
+    title: 'GTM Auditor — AI-Powered Container Analysis',
+    category: 'AI / Full Stack',
+    description: 'An intelligent chat interface for auditing Google Tag Manager containers. Powered by Google Gemini with full container context caching, real-time SSE streaming, and persistent chat history on Cloudflare\'s serverless edge.',
+    tags: ['React', 'TypeScript', 'Cloudflare Workers', 'Google Gemini', 'D1', 'KV'],
+    icon: <Bot className="h-6 w-6" style={{ color: 'var(--text-primary)' }} />,
+    link: null,
+    github: 'https://github.com/saif78642/gtm_auditor'
+  },
   {
     id: 'proj1',
     title: 'Spring Boot + React CRUD Application',
@@ -80,15 +90,16 @@ const TIMELINE = [
 ];
 
 const SKILLS = [
-  { category: 'Languages', items: ['Java', 'Python', 'JavaScript', 'SQL'] },
-  { category: 'Frontend', items: ['React', 'Tailwind CSS', 'Framer Motion'] },
-  { category: 'Backend & Data', items: ['Spring Boot', 'MySQL'] },
-  { category: 'Analytics & Tools', items: ['Google Tag Manager', 'Google Analytics', 'Power BI', 'Git', 'Postman'] }
+  { category: 'Languages', items: ['Java', 'Python', 'JavaScript', 'TypeScript', 'SQL'] },
+  { category: 'Frontend', items: ['React', 'Tailwind CSS', 'Framer Motion', 'Vite'] },
+  { category: 'Backend & Cloud', items: ['Spring Boot', 'Cloudflare Workers', 'MySQL', 'D1 (SQLite)'] },
+  { category: 'AI & Analytics', items: ['Google Gemini', 'Google Tag Manager', 'Google Analytics', 'Power BI'] },
+  { category: 'DevOps & Tools', items: ['Git', 'Wrangler', 'Postman', 'Cloudflare KV'] }
 ];
 
 const METRICS = [
   { value: 3, suffix: '+', label: 'Years Experience' },
-  { value: 3, suffix: '+', label: 'Major Projects' },
+  { value: 4, suffix: '+', label: 'Major Projects' },
   { value: null, text: 'Java', label: 'Full Stack Dev' },
   { value: null, text: 'Python', label: 'Data Science' },
 ];
