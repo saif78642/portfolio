@@ -18,7 +18,7 @@ const ALL_PROJECTS = [
     tags: ['React', 'TypeScript', 'Cloudflare Workers', 'Google Gemini', 'D1', 'KV'],
     icon: <Bot className="h-6 w-6" style={{ color: 'var(--text-primary)' }} />,
     link: null,
-    github: 'https://github.com/saif78642/gtm_auditor'
+    github: 'https://github.com/saif78642/gtm_audit'
   },
   {
     id: 'proj1',
